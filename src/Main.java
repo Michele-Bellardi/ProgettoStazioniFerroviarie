@@ -9,11 +9,41 @@ public class Main {
 
     public static void main(String[] args) {
         prelevaDaFile();
+
+        //TESTING
+        /*
+
+        //prelevare da file
         for (int i = 0; i < info.size(); i++){
-            //System.out.println(info.get(i).toString());
+            System.out.println(info.get(i).toString());
         }
+
         Operazioni prove = new Operazioni();
-        prove.getRow(3);
+
+        //riga
+        System.out.println(prove.getRow(3).toString());
+
+        //comune
+        ArrayList<Stazione> stazioniDelComune = prove.getMunicipality("BORGARO TORINESE");
+        for (int i = 0; i < stazioniDelComune.size(); i++){
+            System.out.println(stazioniDelComune.get(i).toString());
+        }
+
+        //nome
+        System.out.println(prove.getName("Matera Centrale").toString());
+
+        //anno
+        ArrayList<Stazione> stazioniDellAnno = prove.getYear("2013");
+        for (int i  = 0; i < stazioniDellAnno.size(); i++){
+            System.out.println(stazioniDellAnno.get(i).toString());
+        }
+
+        //coordinate
+        System.out.println(prove.getCoordinate("8.9750146", "46.0085186").toString());
+
+        //indicatore
+         System.out.println(prove.getIndicator("984003073").toString());
+        */
     }
 
     //metodo per prelevare le informazioni presenti nel file csv

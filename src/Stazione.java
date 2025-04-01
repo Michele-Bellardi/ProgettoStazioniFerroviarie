@@ -21,6 +21,78 @@ public class Stazione {
         this.latitudine = latitudine;
     }
 
+    public String getComune() {
+        return comune;
+    }
+
+    public void setComune(String comune) {
+        this.comune = comune;
+    }
+
+    public String getProvincia() {
+        return provincia;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+
+    public String getRegione() {
+        return regione;
+    }
+
+    public void setRegione(String regione) {
+        this.regione = regione;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getAnnoInserimento() {
+        return annoInserimento;
+    }
+
+    public void setAnnoInserimento(String annoInserimento) {
+        this.annoInserimento = annoInserimento;
+    }
+
+    public String getDataEOraInserimento() {
+        return dataEOraInserimento;
+    }
+
+    public void setDataEOraInserimento(String dataEOraInserimento) {
+        this.dataEOraInserimento = dataEOraInserimento;
+    }
+
+    public String getIdentificatoreInOpenStreetMap() {
+        return identificatoreInOpenStreetMap;
+    }
+
+    public void setIdentificatoreInOpenStreetMap(String identificatoreInOpenStreetMap) {
+        this.identificatoreInOpenStreetMap = identificatoreInOpenStreetMap;
+    }
+
+    public String getLongitudine() {
+        return longitudine;
+    }
+
+    public void setLongitudine(String longitudine) {
+        this.longitudine = longitudine;
+    }
+
+    public String getLatitudine() {
+        return latitudine;
+    }
+
+    public void setLatitudine(String latitudine) {
+        this.latitudine = latitudine;
+    }
+
     @Override
     public String toString() {
         return "Info{" +
