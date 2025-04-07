@@ -2,10 +2,13 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.File;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.ArrayList;
 
 public class Main {
     public static ArrayList<Stazione> info = new ArrayList<>();
+    final static int PORT = 1050;
 
     public static void main(String[] args) {
         prelevaDaFile();
@@ -13,7 +16,7 @@ public class Main {
         //TESTING
         /*
 
-        //prelevare da file
+        //stampa prelevato da file
         for (int i = 0; i < info.size(); i++){
             System.out.println(info.get(i).toString());
         }
@@ -44,6 +47,18 @@ public class Main {
         //indicatore
          System.out.println(prove.getIndicator("984003073").toString());
         */
+
+        try (ServerSocket serverSocket = new ServerSocket(PORT)) {
+            Socket clientSocket=null;
+            while(true) {
+                System.out.println("Server Socket: " + serverSocket);
+                clientSocket = serverSocket.accept();
+                Connessione nuovaConnessione = new Connessione(clientSocket);
+                nuovaConnessione.start();
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     //metodo per prelevare le informazioni presenti nel file csv
