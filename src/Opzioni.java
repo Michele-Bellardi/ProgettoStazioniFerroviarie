@@ -22,6 +22,6 @@ public enum Opzioni {
                 return op;
             }
         }
-        throw new IllegalArgumentException("Nessuna opzione trovata per: " + text);
+        return null;
     }
 }

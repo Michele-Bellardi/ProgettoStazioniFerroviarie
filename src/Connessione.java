@@ -23,7 +23,7 @@ public class Connessione extends Thread {
 
     @Override
     public void run(){
-        Operazioni prove = new Operazioni();
+        Operazioni operazioni = new Operazioni();
         System.out.println("EchoServer: started ");
         System.out.println("Connection accepted: " + clientSocket);
         while(true){
@@ -42,16 +42,20 @@ public class Connessione extends Thread {
                     System.exit(0);
                 }
                 Opzioni scelta = Opzioni.fromString(str);
+                if(scelta == null){
+                    out.println("OPZIONE NON PRESENTE");
+                    break;
+                }
                 switch (scelta){
                     case Opzioni.GET_ROW:
                         out.print("inserisci la riga:");
                         int row = in.read();
-                        System.out.println(prove.getRow(row).toString());
+                        out.println(operazioni.getRow(row).toString());
                         break;
                     case Opzioni.GET_MUNICIPALITY:
                         out.println("inserisci il comune:");
                         String municipality = in.readLine();
-                        ArrayList<Stazione> stazioniDelComune = prove.getMunicipality(municipality);
+                        ArrayList<Stazione> stazioniDelComune = operazioni.getMunicipality(municipality);
                         for (int i = 0; i < stazioniDelComune.size(); i++){
                             out.println(stazioniDelComune.get(i).toString());
                         }
@@ -59,12 +63,12 @@ public class Connessione extends Thread {
                     case Opzioni.GET_NAME:
                         out.println("inserisci il nome:");
                         String name = in.readLine();
-                        out.println(prove.getName(name).toString());
+                        out.println(operazioni.getName(name).toString());
                         break;
                     case Opzioni.GET_YEAR:
                         out.println("inserisci l'anno:");
                         String year = in.readLine();
-                        ArrayList<Stazione> stazioniDellAnno = prove.getYear(year);
+                        ArrayList<Stazione> stazioniDellAnno = operazioni.getYear(year);
                         for (int i  = 0; i < stazioniDellAnno.size(); i++){
                             out.println(stazioniDellAnno.get(i).toString());
                         }
@@ -74,12 +78,15 @@ public class Connessione extends Thread {
                         String x = in.readLine();
                         out.println("inserisci y:");
                         String y = in.readLine();
-                        out.println(prove.getCoordinate(x, y).toString());
+                        out.println(operazioni.getCoordinate(x, y).toString());
                         break;
                     case Opzioni.GET_INDICATOR:
                         out.println("inserisci indicatore:");
                         String indicator = in.readLine();
-                        out.println(prove.getIndicator(indicator).toString());
+                        out.println(operazioni.getIndicator(indicator).toString());
+                        break;
+                    default:
+                        out.println("NESSUNA OPZIONE CORRISPONDENTE");
                         break;
                 }
             } catch (IOException e) {
