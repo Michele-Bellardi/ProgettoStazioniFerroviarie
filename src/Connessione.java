@@ -48,36 +48,47 @@ public class Connessione extends Thread {
                 }
                 switch (scelta){
                     case Opzioni.GET_ROW:
-                        out.print("inserisci la riga:");
+                        out.println("\n\r");
+                        out.println("inserisci la riga:");
                         int row = in.read();
+                        out.println("\n\r");
                         out.println(operazioni.getRow(row).toString());
                         break;
                     case Opzioni.GET_MUNICIPALITY:
+                        out.println("\n\r");
                         out.println("inserisci il comune:");
                         String municipality = in.readLine();
+                        out.println("\n\r");
                         ArrayList<Stazione> stazioniDelComune = operazioni.getMunicipality(municipality);
                         for (int i = 0; i < stazioniDelComune.size(); i++){
                             out.println(stazioniDelComune.get(i).toString());
                         }
                         break;
                     case Opzioni.GET_NAME:
+                        out.println("\n\r");
                         out.println("inserisci il nome:");
                         String name = in.readLine();
+                        out.println("\n\r");
                         out.println(operazioni.getName(name).toString());
                         break;
                     case Opzioni.GET_YEAR:
+                        out.println("\n\r");
                         out.println("inserisci l'anno:");
                         String year = in.readLine();
+                        out.println("\n\r");
                         ArrayList<Stazione> stazioniDellAnno = operazioni.getYear(year);
                         for (int i  = 0; i < stazioniDellAnno.size(); i++){
                             out.println(stazioniDellAnno.get(i).toString());
                         }
                         break;
                     case Opzioni.GET_COORDINATES:
+                        out.println("\n\r");
                         out.println("inserisci x:");
                         String x = in.readLine();
+                        out.println("\n\r");
                         out.println("inserisci y:");
                         String y = in.readLine();
+                        out.println("\n\r");
                         out.println(operazioni.getCoordinate(x, y).toString());
                         break;
                     case Opzioni.GET_INDICATOR:
@@ -105,6 +116,6 @@ public class Connessione extends Thread {
     }
 
     public String printmenu(){
-        return "Scegliere un'operazione: " + Opzioni.GET_ROW + ". get row\n" + Opzioni.GET_MUNICIPALITY + ". get municipality\n" + Opzioni.GET_NAME + ". get name\n" + Opzioni.GET_YEAR + ". get year\n" + Opzioni.GET_COORDINATES + ". get coordinates\n" + Opzioni.GET_INDICATOR + ". get coordinates\nEND to close connection\nSTOP to end the program";
+        return "Scegliere un'operazione:\n\r " + Opzioni.GET_ROW + ". get row\n\r" + Opzioni.GET_MUNICIPALITY + ". get municipality\n\r" + Opzioni.GET_NAME + ". get name\n\r" + Opzioni.GET_YEAR + ". get year\n\r" + Opzioni.GET_COORDINATES + ". get coordinates\n\r" + Opzioni.GET_INDICATOR + ". get coordinates\n\rEND to close connection\n\rSTOP to end the program";
     }
 }
