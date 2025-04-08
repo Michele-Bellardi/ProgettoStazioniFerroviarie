@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b01d4f45-89f8-4c2b-83b9-32e0208abc27" name="Changes" comment="codice server aggiornato">
+      <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2uo5EfqgIA7iinRMbRUPIx3rVtI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/michele.bellardi/Desktop/stazioniFerroviarie",
+    "onboarding.tips.debug.path": "C:/Users/michele.bellardi/IdeaProjects/Progettino/src/Main.java"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\michele.bellardi\IdeaProjects\Progettino" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b01d4f45-89f8-4c2b-83b9-32e0208abc27" name="Changes" comment="" />
+      <created>1742901978870</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1742901978870</updated>
+    </task>
+    <task id="LOCAL-00001" summary="creazione e test delle funzionalità richieste">
+      <option name="closed" value="true" />
+      <created>1743505891698</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1743505891698</updated>
+    </task>
+    <task id="LOCAL-00002" summary="backup laboratorio">
+      <option name="closed" value="true" />
+      <created>1744108431870</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744108431870</updated>
+    </task>
+    <task id="LOCAL-00003" summary="codice server aggiornato">
+      <option name="closed" value="true" />
+      <created>1744108974853</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1744108974853</updated>
+    </task>
+    <task id="LOCAL-00004" summary="codice server aggiornato">
+      <option name="closed" value="true" />
+      <created>1744110340624</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1744110340625</updated>
+    </task>
+    <task id="LOCAL-00005" summary="codice server aggiornato">
+      <option name="closed" value="true" />
+      <created>1744110995975</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1744110995975</updated>
+    </task>
+    <task id="LOCAL-00006" summary="codice server aggiornato">
+      <option name="closed" value="true" />
+      <created>1744111048103</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1744111048103</updated>
+    </task>
+    <task id="LOCAL-00007" summary="codice server aggiornato">
+      <option name="closed" value="true" />
+      <created>1744111093614</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1744111093615</updated>
+    </task>
+    <task id="LOCAL-00008" summary="codice server aggiornato">
+      <option name="closed" value="true" />
+      <created>1744111137992</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1744111137992</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="creazione e test delle funzionalità richieste" />
+    <MESSAGE value="backup laboratorio" />
+    <MESSAGE value="codice server aggiornato" />
+    <option name="LAST_COMMIT_MESSAGE" value="codice server aggiornato" />
+  </component>
+</project>
