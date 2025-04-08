@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Progettino/Progettino.iml" filepath="$PROJECT_DIR$/Progettino/Progettino.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StazioniFerroviarieClient/StazioniFerroviarieClient.iml" filepath="$PROJECT_DIR$/StazioniFerroviarieClient/StazioniFerroviarieClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/stazioniFerroviarie.iml" filepath="$PROJECT_DIR$/.idea/stazioniFerroviarie.iml" />
+    </modules>
+  </component>
+</project>
