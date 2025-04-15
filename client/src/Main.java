@@ -1,6 +1,3 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,7 +8,6 @@ import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class Main {
-    public class ClientMaiuscolo {
         final static String nomeServer = "localhost";
         final static int portaServer = 4000;
         public static void main(String[] args) {
@@ -33,13 +29,11 @@ public class Main {
             PrintWriter out = new PrintWriter(
                     new OutputStreamWriter(sck.getOutputStream(), "UTF-8"), true);
             Scanner s = new Scanner(System.in, "UTF-8");
-            System.out.print("Frase: ");
+            System.out.print("inserire il comando: ");
             String frase = s.nextLine();
             System.out.format("Invio al server: %s%n", frase);
             out.println(frase);
             System.out.println("In attesa di risposta dal server...");  String risposta = in.readLine();
             System.out.format("Risposta dal server: %s%n", risposta);
         }
-    }
-
 }
