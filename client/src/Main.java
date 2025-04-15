@@ -29,11 +29,22 @@ public class Main {
             PrintWriter out = new PrintWriter(
                     new OutputStreamWriter(sck.getOutputStream(), "UTF-8"), true);
             Scanner s = new Scanner(System.in, "UTF-8");
-            //System.out.print("inserire il comando: ");
-            //String frase = s.nextLine();
-            //System.out.format("Invio al server: %s%n", frase);
-            //out.println(frase);
-            System.out.println("In attesa di risposta dal server...");  String risposta = in.readLine();
-            System.out.format("Risposta dal server: %s%n", risposta);
+
+            while(true){
+                System.out.println("In attesa di risposta dal server...");
+                while (true) {
+                    String risposta = in.readLine();
+                    if (risposta == null) {
+                        System.out.println("fine informazioni");
+                        break;
+                    }
+                    System.out.println(risposta);
+                }
+
+                System.out.print("inserire il comando: ");
+                String frase = s.nextLine();
+                System.out.format("Invio al server: %s%n", frase);
+                out.println(frase);
+            }
         }
 }
