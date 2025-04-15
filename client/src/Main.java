@@ -1,86 +1,85 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 import java.io.*;
-import java.net.Socket;
+import java.net.*;
 
-public class Main {
-    final static String nomeServer = "localhost";
-    final static int portaServer = 1050;
+public class ClientGUI extends JFrame {
+    private Socket socket;
+    private BufferedReader in;
+    private PrintWriter out;
+    private JTextArea textArea;
 
-    private static PrintWriter out;
-    private static BufferedReader in;
+    public ClientGUI(String host, int port) {
+        setTitle("Client Stazioni Ferroviarie");
+        setSize(600, 400);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLayout(new BorderLayout());
 
-    public static void main(String[] args) {
-        try (Socket socket = new Socket(nomeServer, portaServer)) {
-            in = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
-            out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8"), true);
+        JPanel buttonPanel = new JPanel(new GridLayout(3, 2, 10, 10));
 
-            SwingUtilities.invokeLater(Main::createAndShowGUI);
+        // Bottoni per ogni comando
+        String[] comandi = {
+                "GET_ROW", "GET_NAME", "GET_MUNICIPALITY",
+                "GET_YEAR", "GET_COORDINATES", "GET_INDICATOR"
+        };
 
-            // Thread per ascoltare risposte dal server
-            new Thread(() -> {
-                try {
-                    String line;
-                    while ((line = in.readLine()) != null) {
-                        if (line.equals("INPUT_REQUEST")) {
-                            String input = JOptionPane.showInputDialog(null, "Inserisci il valore richiesto:");
-                            if (input != null) {
-                                out.println(input);
-                            }
-                        } else {
-                            showServerResponse(line);
-                        }
-                    }
-                } catch (IOException e) {
-                    showServerResponse("Errore durante la comunicazione con il server: " + e.getMessage());
-                }
-            }).start();
+        for (String comando : comandi) {
+            JButton button = new JButton(comando);
+            button.addActionListener(e -> inviaComando(comando));
+            buttonPanel.add(button);
+        }
 
+        add(buttonPanel, BorderLayout.CENTER);
+
+        textArea = new JTextArea();
+        textArea.setEditable(false);
+        add(new JScrollPane(textArea), BorderLayout.SOUTH);
+
+        try {
+            socket = new Socket(host, port);
+            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            out = new PrintWriter(socket.getOutputStream(), true);
+            System.out.println("Connessione al server riuscita.");
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Errore di connessione al server: " + e.getMessage());
+            System.out.println("Errore di connessione al server: " + e.getMessage());
+        }
+
+        setVisible(true);
+    }
+
+    private void inviaComando(String comando) {
+        if (socket == null || socket.isClosed()) {
+            log("Socket chiusa. Riavvia l'applicazione.");
+            return;
+        }
+
+        try {
+            out.println(comando);
+            String risposta;
+
+            while ((risposta = in.readLine()) != null) {
+                if (risposta.equals("INPUT_REQUEST")) {
+                    String input = JOptionPane.showInputDialog(this, "Inserisci valore:");
+                    if (input == null) return;
+                    out.println(input);
+                } else {
+                    textArea.append(risposta + "\n");
+                }
+
+                // Fine risposta se il server smette di inviare righe
+                if (!in.ready()) break;
+            }
+        } catch (IOException e) {
+            log("Errore durante la comunicazione con il server: " + e.getMessage());
         }
     }
 
-    private static void createAndShowGUI() {
-        JFrame frame = new JFrame("Stazioni Ferroviarie");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 300);
-        frame.setLocationRelativeTo(null);
-
-        JPanel panel = new JPanel(new GridLayout(2, 3));
-
-        addButton(panel, "GET_ROW");
-        addButton(panel, "GET_MUNICIPALITY");
-        addButton(panel, "GET_NAME");
-        addButton(panel, "GET_YEAR");
-        addButton(panel, "GET_COORDINATES");
-        addButton(panel, "GET_INDICATOR");
-
-        frame.add(panel);
-        frame.setVisible(true);
+    private void log(String msg) {
+        textArea.append(msg + "\n");
     }
 
-    private static void addButton(JPanel panel, String command) {
-        JButton button = new JButton(command);
-        button.addActionListener(e -> {
-            out.println(command);
-        });
-        panel.add(button);
-    }
-
-    private static void showServerResponse(String message) {
-        SwingUtilities.invokeLater(() -> {
-            JFrame responseFrame = new JFrame("Risposta dal Server");
-            responseFrame.setSize(400, 200);
-            responseFrame.setLocationRelativeTo(null);
-
-            JTextArea textArea = new JTextArea(message);
-            textArea.setEditable(false);
-            textArea.setWrapStyleWord(true);
-            textArea.setLineWrap(true);
-            responseFrame.add(new JScrollPane(textArea));
-
-            responseFrame.setVisible(true);
-        });
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> new ClientGUI("localhost", 12345)); // Cambia porta se serve
     }
 }

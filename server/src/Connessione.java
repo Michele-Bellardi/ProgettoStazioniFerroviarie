@@ -4,125 +4,115 @@ import java.util.ArrayList;
 
 public class Connessione extends Thread {
     private Socket clientSocket;
-    private BufferedReader in = null;
-    private PrintWriter out = null;
+    private BufferedReader in;
+    private PrintWriter out;
 
     public Connessione(Socket clientSocket){
         this.clientSocket = clientSocket;
-        InputStreamReader isr = null;
-        try{
-            isr = new InputStreamReader((clientSocket.getInputStream()));
-            OutputStreamWriter osw = new OutputStreamWriter(clientSocket.getOutputStream());
-            BufferedWriter bw = new BufferedWriter(osw);
-            out = new PrintWriter(bw, true);
+        try {
+            in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+            out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream())), true);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            throw new RuntimeException("Errore durante l'inizializzazione degli stream");
         }
-        in = new BufferedReader(isr);
     }
 
     @Override
     public void run(){
         Operazioni operazioni = new Operazioni();
-        System.out.println("EchoServer: started ");
-        System.out.println("Connection accepted: " + clientSocket);
-        while(true){
-            //out.println(printmenu());
-            String str = null;
-            try {
-                str = in.readLine();
-                if(str.equals("STOP")){
-                    out.close();
-                    try {
-                        in.close();
-                        clientSocket.close();
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-                    System.exit(0);
-                }
-                Opzioni scelta = Opzioni.fromString(str);
-                if(scelta == null){
-                    out.println("OPZIONE NON PRESENTE");
+        System.out.println("Connessione avviata con: " + clientSocket);
+
+        try {
+            String str = in.readLine();
+            while ((str != null) {
+                System.out.println("Messaggio ricevuto dal client: " + str);
+
+                if (str.equalsIgnoreCase("STOP")) {
+                    System.out.println("Chiusura richiesta dal client.");
                     break;
                 }
-                switch (scelta){
-                    case Opzioni.GET_ROW:
-                        out.println("\n\r");
+
+                if (str.equalsIgnoreCase("END")) {
+                    System.out.println("Connessione terminata.");
+                    break;
+                }
+
+                Opzioni scelta = Opzioni.fromString(str);
+                if (scelta == null) {
+                    out.println("OPZIONE NON PRESENTE");
+                    continue;
+                }
+
+                switch (scelta) {
+                    case GET_ROW:
                         out.println("inserisci la riga:");
-                        out.println("INPUT_REQUEST"); //per coordinare le richieste di input dall'interfaccia grafica
+                        out.println("INPUT_REQUEST");
                         String row = in.readLine();
                         int riga = Integer.parseInt(row);
-                        out.println("\n\r");
                         out.println(operazioni.getRow(riga).toString());
                         break;
-                    case Opzioni.GET_MUNICIPALITY:
-                        out.println("\n\r");
+
+                    case GET_MUNICIPALITY:
                         out.println("inserisci il comune:");
                         out.println("INPUT_REQUEST");
                         String municipality = in.readLine();
-                        out.println("\n\r");
-                        ArrayList<Stazione> stazioniDelComune = operazioni.getMunicipality(municipality);
-                        for (int i = 0; i < stazioniDelComune.size(); i++){
-                            out.println(stazioniDelComune.get(i).toString());
+                        ArrayList<Stazione> stazioniComune = operazioni.getMunicipality(municipality);
+                        for (Stazione s : stazioniComune) {
+                            out.println(s.toString());
                         }
                         break;
-                    case Opzioni.GET_NAME:
-                        out.println("\n\r");
+
+                    case GET_NAME:
                         out.println("inserisci il nome:");
                         out.println("INPUT_REQUEST");
                         String name = in.readLine();
-                        out.println("\n\r");
                         out.println(operazioni.getName(name).toString());
                         break;
-                    case Opzioni.GET_YEAR:
-                        out.println("\n\r");
+
+                    case GET_YEAR:
                         out.println("inserisci l'anno:");
                         out.println("INPUT_REQUEST");
                         String year = in.readLine();
-                        out.println("\n\r");
-                        ArrayList<Stazione> stazioniDellAnno = operazioni.getYear(year);
-                        for (int i  = 0; i < stazioniDellAnno.size(); i++){
-                            out.println(stazioniDellAnno.get(i).toString());
+                        ArrayList<Stazione> stazioniAnno = operazioni.getYear(year);
+                        for (Stazione s : stazioniAnno) {
+                            out.println(s.toString());
                         }
                         break;
-                    case Opzioni.GET_COORDINATES:
-                        out.println("\n\r");
+
+                    case GET_COORDINATES:
                         out.println("inserisci x:");
                         out.println("INPUT_REQUEST");
                         String x = in.readLine();
-                        out.println("\n\r");
                         out.println("inserisci y:");
                         out.println("INPUT_REQUEST");
                         String y = in.readLine();
-                        out.println("\n\r");
                         out.println(operazioni.getCoordinate(x, y).toString());
                         break;
-                    case Opzioni.GET_INDICATOR:
+
+                    case GET_INDICATOR:
                         out.println("inserisci indicatore:");
+                        out.println("INPUT_REQUEST");
                         String indicator = in.readLine();
                         out.println(operazioni.getIndicator(indicator).toString());
                         break;
+
                     default:
                         out.println("NESSUNA OPZIONE CORRISPONDENTE");
                         break;
                 }
-            } catch (IOException e) {
-                throw new RuntimeException(e);
             }
-            if (str.equals("END")) break;
-        }
-        System.out.println("EchoServer: closing...");
-        out.close();
-        try {
-            in.close();
-            clientSocket.close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.err.println("Errore durante la comunicazione con il client: " + e.getMessage());
+        } finally {
+            try {
+                System.out.println("Chiusura della connessione con il client.");
+                if (in != null) in.close();
+                if (out != null) out.close();
+                if (clientSocket != null) clientSocket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
-
-    /*public String printmenu(){
-        return "Scegliere un'operazione:\n\r " + Opzioni.GET_ROW + ". get row\n\r" + Opzioni.GET_MUNICIPALITY + ". get municipality\n\r" + Opzioni.GET_NAME + ". get name\n\r" + Opzioni.GET_YEAR + ". get year\n\r" + Opzioni.GET_COORDINATES + ". get coordinates\n\r" + Opzioni.GET_INDICATOR + ". get coordinates\n\rEND to close connection\n\rSTOP to end the program";
-    }*/
 }
