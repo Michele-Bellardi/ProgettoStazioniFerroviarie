@@ -63,7 +63,7 @@ public class Main {
 
     //metodo per prelevare le informazioni presenti nel file csv
     public static void prelevaDaFile(){
-        String filePath = new File("Mappa-delle-stazioni-ferroviarie-in-Italia.csv").getAbsolutePath();
+        String filePath = new File("C:\\Users\\michele.bellardi\\Desktop\\progettoSistemi\\ProgettoStazioniFerroviarie\\server\\Mappa-delle-stazioni-ferroviarie-in-Italia.csv").getAbsolutePath();
         boolean isFirstLine = true;
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;

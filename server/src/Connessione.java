@@ -50,9 +50,10 @@ public class Connessione extends Thread {
                     case Opzioni.GET_ROW:
                         out.println("\n\r");
                         out.println("inserisci la riga:");
-                        int row = in.read();
+                        String row = in.readLine();
+                        int riga = Integer.parseInt(row);
                         out.println("\n\r");
-                        out.println(operazioni.getRow(row).toString());
+                        out.println(operazioni.getRow(riga).toString());
                         break;
                     case Opzioni.GET_MUNICIPALITY:
                         out.println("\n\r");

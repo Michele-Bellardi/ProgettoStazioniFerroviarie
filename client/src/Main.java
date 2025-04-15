@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Main {
         final static String nomeServer = "localhost";
-        final static int portaServer = 4000;
+        final static int portaServer = 1050;
         public static void main(String[] args) {
             System.out.println("Connessione al server in corso...");
             try (Socket sck = new Socket(nomeServer, portaServer)) {
@@ -29,10 +29,10 @@ public class Main {
             PrintWriter out = new PrintWriter(
                     new OutputStreamWriter(sck.getOutputStream(), "UTF-8"), true);
             Scanner s = new Scanner(System.in, "UTF-8");
-            System.out.print("inserire il comando: ");
-            String frase = s.nextLine();
-            System.out.format("Invio al server: %s%n", frase);
-            out.println(frase);
+            //System.out.print("inserire il comando: ");
+            //String frase = s.nextLine();
+            //System.out.format("Invio al server: %s%n", frase);
+            //out.println(frase);
             System.out.println("In attesa di risposta dal server...");  String risposta = in.readLine();
             System.out.format("Risposta dal server: %s%n", risposta);
         }
