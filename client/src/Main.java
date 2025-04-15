@@ -1,3 +1,5 @@
+import javax.swing.*;
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -22,6 +24,12 @@ public class Main {
                 System.err.format("Nome di server non valido: %s%n", e.getMessage());  } catch (IOException e) {
                 System.err.format("Errore durante la comunicazione con il server: %s%n",  e.getMessage());
             }
+
+            SwingUtilities.invokeLater(new Runnable() {
+                public void run() {
+                    createAndShowGUI();
+                }
+            });
         }
         private static void comunica(Socket sck) throws IOException {
             BufferedReader in = new BufferedReader(
@@ -47,4 +55,36 @@ public class Main {
                 out.println(frase);
             }
         }
+
+    public static void createAndShowGUI() {
+        // Creazione della finestra
+        JFrame frame = new JFrame("Griglia di Pulsanti");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 400);
+
+        // Creazione del pannello con layout a griglia
+        JPanel panel = new JPanel(new GridLayout(2, 3));
+
+        // Creazione dei pulsanti con le etichette indicate
+        JButton btnGetRow = new JButton("GET_ROW");
+        JButton btnGetMunicipality = new JButton("GET_MUNICIPALITY");
+        JButton btnGetName = new JButton("GET_NAME");
+        JButton btnGetYear = new JButton("GET_YEAR");
+        JButton btnGetCoordinates = new JButton("GET_COORDINATES");
+        JButton btnGetIndicator = new JButton("GET_INDICATOR");
+
+        // Aggiunta dei pulsanti al pannello
+        panel.add(btnGetRow);
+        panel.add(btnGetMunicipality);
+        panel.add(btnGetName);
+        panel.add(btnGetYear);
+        panel.add(btnGetCoordinates);
+        panel.add(btnGetIndicator);
+
+        // Aggiunta del pannello alla finestra
+        frame.add(panel);
+
+        // Visualizzazione della finestra
+        frame.setVisible(true);
+    }
 }
