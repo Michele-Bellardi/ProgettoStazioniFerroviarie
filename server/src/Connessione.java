@@ -50,6 +50,7 @@ public class Connessione extends Thread {
                     case Opzioni.GET_ROW:
                         out.println("\n\r");
                         out.println("inserisci la riga:");
+                        out.println("INPUT_REQUEST"); //per coordinare le richieste di input dall'interfaccia grafica
                         String row = in.readLine();
                         int riga = Integer.parseInt(row);
                         out.println("\n\r");
@@ -58,6 +59,7 @@ public class Connessione extends Thread {
                     case Opzioni.GET_MUNICIPALITY:
                         out.println("\n\r");
                         out.println("inserisci il comune:");
+                        out.println("INPUT_REQUEST");
                         String municipality = in.readLine();
                         out.println("\n\r");
                         ArrayList<Stazione> stazioniDelComune = operazioni.getMunicipality(municipality);
@@ -68,6 +70,7 @@ public class Connessione extends Thread {
                     case Opzioni.GET_NAME:
                         out.println("\n\r");
                         out.println("inserisci il nome:");
+                        out.println("INPUT_REQUEST");
                         String name = in.readLine();
                         out.println("\n\r");
                         out.println(operazioni.getName(name).toString());
@@ -75,6 +78,7 @@ public class Connessione extends Thread {
                     case Opzioni.GET_YEAR:
                         out.println("\n\r");
                         out.println("inserisci l'anno:");
+                        out.println("INPUT_REQUEST");
                         String year = in.readLine();
                         out.println("\n\r");
                         ArrayList<Stazione> stazioniDellAnno = operazioni.getYear(year);
@@ -85,9 +89,11 @@ public class Connessione extends Thread {
                     case Opzioni.GET_COORDINATES:
                         out.println("\n\r");
                         out.println("inserisci x:");
+                        out.println("INPUT_REQUEST");
                         String x = in.readLine();
                         out.println("\n\r");
                         out.println("inserisci y:");
+                        out.println("INPUT_REQUEST");
                         String y = in.readLine();
                         out.println("\n\r");
                         out.println(operazioni.getCoordinate(x, y).toString());
