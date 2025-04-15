@@ -52,7 +52,8 @@ public class Main {
                     System.out.println("Fine informazioni");
                     break;
                 }
-                System.out.println(risposta);
+                // Quando arriva una risposta, crea una nuova finestra per visualizzarla
+                createResponseWindow(risposta);
             }
 
             System.out.print("Inserire il comando: ");
@@ -108,5 +109,32 @@ public class Main {
             System.out.format("Invio al server: %s%n", command);
             out.println(command);
         }
+    }
+
+    // Metodo per creare una nuova finestra che visualizza la risposta del server
+    private static void createResponseWindow(String response) {
+        SwingUtilities.invokeLater(() -> {
+            // Creazione della finestra per visualizzare la risposta
+            JFrame responseFrame = new JFrame("Risposta dal Server");
+            responseFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            responseFrame.setSize(400, 200);
+
+            // Creazione di un pannello per contenere la risposta
+            JPanel panel = new JPanel();
+            panel.setLayout(new BorderLayout());
+
+            // Creazione di un'area di testo per visualizzare la risposta
+            JTextArea textArea = new JTextArea(response);
+            textArea.setEditable(false);
+            textArea.setWrapStyleWord(true);
+            textArea.setLineWrap(true);
+
+            // Aggiunta della risposta all'area di testo
+            panel.add(new JScrollPane(textArea), BorderLayout.CENTER);
+
+            // Aggiunta del pannello alla finestra
+            responseFrame.add(panel);
+            responseFrame.setVisible(true);
+        });
     }
 }

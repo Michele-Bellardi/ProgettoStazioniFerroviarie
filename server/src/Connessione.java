@@ -27,7 +27,7 @@ public class Connessione extends Thread {
         System.out.println("EchoServer: started ");
         System.out.println("Connection accepted: " + clientSocket);
         while(true){
-            out.println(printmenu());
+            //out.println(printmenu());
             String str = null;
             try {
                 str = in.readLine();
@@ -116,7 +116,7 @@ public class Connessione extends Thread {
         }
     }
 
-    public String printmenu(){
+    /*public String printmenu(){
         return "Scegliere un'operazione:\n\r " + Opzioni.GET_ROW + ". get row\n\r" + Opzioni.GET_MUNICIPALITY + ". get municipality\n\r" + Opzioni.GET_NAME + ". get name\n\r" + Opzioni.GET_YEAR + ". get year\n\r" + Opzioni.GET_COORDINATES + ". get coordinates\n\r" + Opzioni.GET_INDICATOR + ". get coordinates\n\rEND to close connection\n\rSTOP to end the program";
-    }
+    }*/
 }
