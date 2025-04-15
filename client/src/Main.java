@@ -1,60 +1,66 @@
 import javax.swing.*;
 import java.awt.*;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class Main {
-        final static String nomeServer = "localhost";
-        final static int portaServer = 1050;
-        public static void main(String[] args) {
-            System.out.println("Connessione al server in corso...");
-            try (Socket sck = new Socket(nomeServer, portaServer)) {
-                String rem = sck.getRemoteSocketAddress().toString();
-                String loc = sck.getLocalSocketAddress().toString();
-                System.out.format("Server (remoto): %s%n", rem);
-                System.out.format("Client (client): %s%n", loc);
-                comunica(sck);
-            } catch (UnknownHostException e) {
-                System.err.format("Nome di server non valido: %s%n", e.getMessage());  } catch (IOException e) {
-                System.err.format("Errore durante la comunicazione con il server: %s%n",  e.getMessage());
-            }
+    final static String nomeServer = "localhost";
+    final static int portaServer = 1050;
 
+    private static PrintWriter out;
+
+    public static void main(String[] args) {
+        System.out.println("Connessione al server in corso...");
+        try (Socket sck = new Socket(nomeServer, portaServer)) {
+            String rem = sck.getRemoteSocketAddress().toString();
+            String loc = sck.getLocalSocketAddress().toString();
+            System.out.format("Server (remoto): %s%n", rem);
+            System.out.format("Client (client): %s%n", loc);
+
+            // Inizializzazione dell'output stream per la comunicazione con il server
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(sck.getInputStream(), "UTF-8"));
+            out = new PrintWriter(
+                    new OutputStreamWriter(sck.getOutputStream(), "UTF-8"), true);
+            Scanner s = new Scanner(System.in, "UTF-8");
+
+            // Inizializzare l'interfaccia grafica
             SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
                     createAndShowGUI();
                 }
             });
-        }
-        private static void comunica(Socket sck) throws IOException {
-            BufferedReader in = new BufferedReader(
-                    new InputStreamReader(sck.getInputStream(), "UTF-8"));
-            PrintWriter out = new PrintWriter(
-                    new OutputStreamWriter(sck.getOutputStream(), "UTF-8"), true);
-            Scanner s = new Scanner(System.in, "UTF-8");
 
-            while(true){
-                System.out.println("In attesa di risposta dal server...");
-                while (true) {
-                    String risposta = in.readLine();
-                    if (risposta == null) {
-                        System.out.println("fine informazioni");
-                        break;
-                    }
-                    System.out.println(risposta);
+            // Esegui la comunicazione con il server
+            comunica(in, s);
+
+        } catch (UnknownHostException e) {
+            System.err.format("Nome di server non valido: %s%n", e.getMessage());
+        } catch (IOException e) {
+            System.err.format("Errore durante la comunicazione con il server: %s%n", e.getMessage());
+        }
+    }
+
+    private static void comunica(BufferedReader in, Scanner s) throws IOException {
+        while (true) {
+            System.out.println("In attesa di risposta dal server...");
+            while (true) {
+                String risposta = in.readLine();
+                if (risposta == null) {
+                    System.out.println("Fine informazioni");
+                    break;
                 }
-
-                System.out.print("inserire il comando: ");
-                String frase = s.nextLine();
-                System.out.format("Invio al server: %s%n", frase);
-                out.println(frase);
+                System.out.println(risposta);
             }
+
+            System.out.print("Inserire il comando: ");
+            String frase = s.nextLine();
+            System.out.format("Invio al server: %s%n", frase);
+            out.println(frase);
         }
+    }
 
     public static void createAndShowGUI() {
         // Creazione della finestra
@@ -73,6 +79,14 @@ public class Main {
         JButton btnGetCoordinates = new JButton("GET_COORDINATES");
         JButton btnGetIndicator = new JButton("GET_INDICATOR");
 
+        // Aggiunta degli ActionListener ai pulsanti per inviare i comandi al server
+        btnGetRow.addActionListener(e -> sendCommandToServer("GET_ROW"));
+        btnGetMunicipality.addActionListener(e -> sendCommandToServer("GET_MUNICIPALITY"));
+        btnGetName.addActionListener(e -> sendCommandToServer("GET_NAME"));
+        btnGetYear.addActionListener(e -> sendCommandToServer("GET_YEAR"));
+        btnGetCoordinates.addActionListener(e -> sendCommandToServer("GET_COORDINATES"));
+        btnGetIndicator.addActionListener(e -> sendCommandToServer("GET_INDICATOR"));
+
         // Aggiunta dei pulsanti al pannello
         panel.add(btnGetRow);
         panel.add(btnGetMunicipality);
@@ -86,5 +100,13 @@ public class Main {
 
         // Visualizzazione della finestra
         frame.setVisible(true);
+    }
+
+    // Metodo per inviare il comando al server
+    private static void sendCommandToServer(String command) {
+        if (out != null) {
+            System.out.format("Invio al server: %s%n", command);
+            out.println(command);
+        }
     }
 }
