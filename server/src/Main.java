@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static ArrayList<Stazione> info = new ArrayList<>();
-    final static int PORT = 1050;
+    public static int PORT = 1050;
 
     public static void main(String[] args) {
         prelevaDaFile();

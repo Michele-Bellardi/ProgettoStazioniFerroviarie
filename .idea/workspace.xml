@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b01d4f45-89f8-4c2b-83b9-32e0208abc27" name="Changes" comment="client aggiornato">
+    <list default="true" id="b01d4f45-89f8-4c2b-83b9-32e0208abc27" name="Changes" comment="client e server aggioranti (la connessione si interrompe immediatamente)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/Connessione.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/Connessione.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,18 +26,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Michele-Bellardi"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Michele-Bellardi&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Michele-Bellardi/ProgettoStazioniFerroviarie.git",
-    "accountId": "29b46a92-804f-48fb-9e26-4222b1aca04d"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Michele-Bellardi/ProgettoStazioniFerroviarie.git&quot;,
+    &quot;accountId&quot;: &quot;29b46a92-804f-48fb-9e26-4222b1aca04d&quot;
   }
-}]]></component>
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -164,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744733748425</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="client e server aggioranti (la connessione si interrompe immediatamente)">
+      <option name="closed" value="true" />
+      <created>1744734544611</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1744734544611</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,6 +193,7 @@
     <MESSAGE value="codice server aggiornato" />
     <MESSAGE value="Codice server aggiornato e client aggiornati in modo da coordinare richieste di input dall'interfaccia grafica" />
     <MESSAGE value="client aggiornato" />
-    <option name="LAST_COMMIT_MESSAGE" value="client aggiornato" />
+    <MESSAGE value="client e server aggioranti (la connessione si interrompe immediatamente)" />
+    <option name="LAST_COMMIT_MESSAGE" value="client e server aggioranti (la connessione si interrompe immediatamente)" />
   </component>
 </project>

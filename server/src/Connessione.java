@@ -7,7 +7,7 @@ public class Connessione extends Thread {
     private BufferedReader in;
     private PrintWriter out;
 
-    public Connessione(Socket clientSocket){
+    public Connessione(Socket clientSocket) {
         this.clientSocket = clientSocket;
         try {
             in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
@@ -19,22 +19,17 @@ public class Connessione extends Thread {
     }
 
     @Override
-    public void run(){
+    public void run() {
         Operazioni operazioni = new Operazioni();
         System.out.println("Connessione avviata con: " + clientSocket);
-
+        String str = "";
         try {
-            String str = in.readLine();
-            while ((str != null) {
+            str = in.readLine();
+            while ((str != null)) {
                 System.out.println("Messaggio ricevuto dal client: " + str);
 
-                if (str.equalsIgnoreCase("STOP")) {
+                if (str.equalsIgnoreCase("STOP") || str.equalsIgnoreCase("END")) {
                     System.out.println("Chiusura richiesta dal client.");
-                    break;
-                }
-
-                if (str.equalsIgnoreCase("END")) {
-                    System.out.println("Connessione terminata.");
                     break;
                 }
 
@@ -46,7 +41,7 @@ public class Connessione extends Thread {
 
                 switch (scelta) {
                     case GET_ROW:
-                        out.println("inserisci la riga:");
+                        out.println("Inserisci la riga:");
                         out.println("INPUT_REQUEST");
                         String row = in.readLine();
                         int riga = Integer.parseInt(row);
@@ -54,7 +49,7 @@ public class Connessione extends Thread {
                         break;
 
                     case GET_MUNICIPALITY:
-                        out.println("inserisci il comune:");
+                        out.println("Inserisci il comune:");
                         out.println("INPUT_REQUEST");
                         String municipality = in.readLine();
                         ArrayList<Stazione> stazioniComune = operazioni.getMunicipality(municipality);
@@ -64,14 +59,14 @@ public class Connessione extends Thread {
                         break;
 
                     case GET_NAME:
-                        out.println("inserisci il nome:");
+                        out.println("Inserisci il nome:");
                         out.println("INPUT_REQUEST");
                         String name = in.readLine();
                         out.println(operazioni.getName(name).toString());
                         break;
 
                     case GET_YEAR:
-                        out.println("inserisci l'anno:");
+                        out.println("Inserisci l'anno:");
                         out.println("INPUT_REQUEST");
                         String year = in.readLine();
                         ArrayList<Stazione> stazioniAnno = operazioni.getYear(year);
@@ -81,17 +76,17 @@ public class Connessione extends Thread {
                         break;
 
                     case GET_COORDINATES:
-                        out.println("inserisci x:");
+                        out.println("Inserisci x:");
                         out.println("INPUT_REQUEST");
                         String x = in.readLine();
-                        out.println("inserisci y:");
+                        out.println("Inserisci y:");
                         out.println("INPUT_REQUEST");
                         String y = in.readLine();
                         out.println(operazioni.getCoordinate(x, y).toString());
                         break;
 
                     case GET_INDICATOR:
-                        out.println("inserisci indicatore:");
+                        out.println("Inserisci indicatore:");
                         out.println("INPUT_REQUEST");
                         String indicator = in.readLine();
                         out.println(operazioni.getIndicator(indicator).toString());
@@ -113,6 +108,18 @@ public class Connessione extends Thread {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    public static void main(String[] args) {
+        try (ServerSocket serverSocket = new ServerSocket(Main.PORT)) {
+            System.out.println("Server in ascolto sulla porta 12345");
+            while (true) {
+                Socket clientSocket = serverSocket.accept();
+                new Connessione(clientSocket).start();
+            }
+        } catch (IOException e) {
+            System.err.println("Errore nel server: " + e.getMessage());
         }
     }
 }

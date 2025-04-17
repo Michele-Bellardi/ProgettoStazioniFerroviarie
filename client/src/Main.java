@@ -40,15 +40,30 @@ public class ClientGUI extends JFrame {
             socket = new Socket(host, port);
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             out = new PrintWriter(socket.getOutputStream(), true);
-            System.out.println("Connessione al server riuscita.");
+            log("Connessione al server riuscita.");
         } catch (IOException e) {
-            System.out.println("Errore di connessione al server: " + e.getMessage());
+            log("Errore di connessione al server: " + e.getMessage());
         }
+
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                try {
+                    if (socket != null && !socket.isClosed()) {
+                        out.println("END");
+                        socket.close();
+                    }
+                } catch (IOException ex) {
+                    log("Errore durante la chiusura del socket: " + ex.getMessage());
+                }
+            }
+        });
 
         setVisible(true);
     }
 
     private void inviaComando(String comando) {
+        log("Invio comando: " + comando);
         if (socket == null || socket.isClosed()) {
             log("Socket chiusa. Riavvia l'applicazione.");
             return;
@@ -59,6 +74,7 @@ public class ClientGUI extends JFrame {
             String risposta;
 
             while ((risposta = in.readLine()) != null) {
+                log("Risposta ricevuta: " + risposta);
                 if (risposta.equals("INPUT_REQUEST")) {
                     String input = JOptionPane.showInputDialog(this, "Inserisci valore:");
                     if (input == null) return;
@@ -67,7 +83,6 @@ public class ClientGUI extends JFrame {
                     textArea.append(risposta + "\n");
                 }
 
-                // Fine risposta se il server smette di inviare righe
                 if (!in.ready()) break;
             }
         } catch (IOException e) {
@@ -80,6 +95,7 @@ public class ClientGUI extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new ClientGUI("localhost", 12345)); // Cambia porta se serve
+        int PORT = 1050;
+        SwingUtilities.invokeLater(() -> new ClientGUI("localhost", PORT)); // Cambia porta se necessario
     }
 }
