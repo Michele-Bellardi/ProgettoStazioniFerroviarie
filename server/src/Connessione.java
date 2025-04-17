@@ -25,7 +25,7 @@ public class Connessione extends Thread {
         String str = null;
         try {
 
-            do ((str != null)) {
+            do {
                 str = in.readLine();
                 System.out.println("Messaggio ricevuto dal client: " + str);
 

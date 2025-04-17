@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b01d4f45-89f8-4c2b-83b9-32e0208abc27" name="Changes" comment="aggionramento 17-04">
+    <list default="true" id="b01d4f45-89f8-4c2b-83b9-32e0208abc27" name="Changes" comment="aggioramento 17-04 20.03">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/Connessione.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/Connessione.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,12 +29,12 @@
     &quot;assignee&quot;: &quot;Michele-Bellardi&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Michele-Bellardi/ProgettoStazioniFerroviarie.git&quot;,
-    &quot;accountId&quot;: &quot;29b46a92-804f-48fb-9e26-4222b1aca04d&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Michele-Bellardi/ProgettoStazioniFerroviarie.git",
+    "accountId": "d84423dd-a09e-497c-8a17-1907e4bb9c3e"
   }
-}</component>
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -49,19 +47,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/miche/Desktop/java/ProgettoStazioniFerroviarie&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/michele.bellardi/IdeaProjects/Progettino/src/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/miche/OneDrive/Desktop/java/ProgettoStazioniFerroviarie",
+    "onboarding.tips.debug.path": "C:/Users/michele.bellardi/IdeaProjects/Progettino/src/Main.java",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\michele.bellardi\IdeaProjects\Progettino" />
@@ -180,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744873457423</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="aggioramento 17-04 20.03">
+      <option name="closed" value="true" />
+      <created>1744913042714</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1744913042714</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -202,6 +208,7 @@
     <MESSAGE value="client aggiornato" />
     <MESSAGE value="client e server aggioranti (la connessione si interrompe immediatamente)" />
     <MESSAGE value="aggionramento 17-04" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggionramento 17-04" />
+    <MESSAGE value="aggioramento 17-04 20.03" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggioramento 17-04 20.03" />
   </component>
 </project>

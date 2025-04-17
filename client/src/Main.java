@@ -4,13 +4,13 @@ import java.awt.event.*;
 import java.io.*;
 import java.net.*;
 
-public class ClientGUI extends JFrame {
+public class Main extends JFrame {
     private Socket socket;
     private BufferedReader in;
     private PrintWriter out;
     private JTextArea textArea;
 
-    public ClientGUI(String host, int port) {
+    public Main(String host, int port) {
         setTitle("Client Stazioni Ferroviarie");
         setSize(600, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -96,6 +96,6 @@ public class ClientGUI extends JFrame {
 
     public static void main(String[] args) {
         int PORT = 1050;
-        SwingUtilities.invokeLater(() -> new ClientGUI("localhost", PORT)); // Cambia porta se necessario
+        SwingUtilities.invokeLater(() -> new Main("localhost", PORT)); // Cambia porta se necessario
     }
 }
