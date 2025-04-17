@@ -22,10 +22,10 @@ public class Connessione extends Thread {
     public void run() {
         Operazioni operazioni = new Operazioni();
         System.out.println("Connessione avviata con: " + clientSocket);
-        String str = "a";
+        String str = null;
         try {
 
-            while ((str != null)) {
+            do ((str != null)) {
                 str = in.readLine();
                 System.out.println("Messaggio ricevuto dal client: " + str);
 
@@ -97,7 +97,7 @@ public class Connessione extends Thread {
                         out.println("NESSUNA OPZIONE CORRISPONDENTE");
                         break;
                 }
-            }
+            }while(str != null);
         } catch (IOException e) {
             System.err.println("Errore durante la comunicazione con il client: " + e.getMessage());
         } finally {
