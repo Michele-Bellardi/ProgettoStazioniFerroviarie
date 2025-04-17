@@ -22,10 +22,11 @@ public class Connessione extends Thread {
     public void run() {
         Operazioni operazioni = new Operazioni();
         System.out.println("Connessione avviata con: " + clientSocket);
-        String str = "";
+        String str = "a";
         try {
-            str = in.readLine();
+
             while ((str != null)) {
+                str = in.readLine();
                 System.out.println("Messaggio ricevuto dal client: " + str);
 
                 if (str.equalsIgnoreCase("STOP") || str.equalsIgnoreCase("END")) {
@@ -108,18 +109,6 @@ public class Connessione extends Thread {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-    }
-
-    public static void main(String[] args) {
-        try (ServerSocket serverSocket = new ServerSocket(Main.PORT)) {
-            System.out.println("Server in ascolto sulla porta 12345");
-            while (true) {
-                Socket clientSocket = serverSocket.accept();
-                new Connessione(clientSocket).start();
-            }
-        } catch (IOException e) {
-            System.err.println("Errore nel server: " + e.getMessage());
         }
     }
 }

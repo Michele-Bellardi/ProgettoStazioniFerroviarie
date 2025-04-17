@@ -48,16 +48,14 @@ public class Main {
          System.out.println(prove.getIndicator("984003073").toString());
         */
 
-        try (ServerSocket serverSocket = new ServerSocket(PORT)) {
-            Socket clientSocket=null;
-            while(true) {
-                System.out.println("Server Socket: " + serverSocket);
-                clientSocket = serverSocket.accept();
-                Connessione nuovaConnessione = new Connessione(clientSocket);
-                nuovaConnessione.start();
+        try (ServerSocket serverSocket = new ServerSocket(Main.PORT)) {
+            System.out.println("Server in ascolto sulla porta 12345");
+            while (true) {
+                Socket clientSocket = serverSocket.accept();
+                new Connessione(clientSocket).start();
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.err.println("Errore nel server: " + e.getMessage());
         }
     }
 
