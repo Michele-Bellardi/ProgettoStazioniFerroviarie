@@ -1,29 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="64f21ad2-6779-4666-9ba1-6456dbdd1fbe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Mappa-delle-stazioni-ferroviarie-in-Italia.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Progettino.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Progettino.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Progettino/Connessione$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Progettino/Connessione.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Progettino/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Progettino/Operazioni.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Progettino/Opzioni.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Progettino/RigaNonEsistenteException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Progettino/Stazione.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Progettino/StazioneNonTrovataException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/Connessione.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/Operazioni.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/Opzioni.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/RigaNonEsistenteException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/Stazione.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/StazioneNonTrovataException.java" beforeDir="false" />
+    <list default="true" id="64f21ad2-6779-4666-9ba1-6456dbdd1fbe" name="Changes" comment="fix bug interfaccia grafica (manca la visualizzazione delle informazioni riguardanti la/e stazione/i richiesta/e via gui)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/out/production/Progettino/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/Progettino/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/out/production/Progettino/Stazione.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/Progettino/Stazione.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/Stazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Stazione.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,23 +20,38 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Michele-Bellardi&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Michele-Bellardi/ProgettoStazioniFerroviarie.git&quot;,
+    &quot;accountId&quot;: &quot;d84423dd-a09e-497c-8a17-1907e4bb9c3e&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2vRcR7LyMugS36mGwrR2Rr15XNi" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "C:/Users/michele.bellardi/Desktop/stazioniFerroviarie/Progettino/client/src/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ClientGUI.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/miche/OneDrive/Desktop/java/ProgettoStazioniFerroviarie/client&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/michele.bellardi/Desktop/stazioniFerroviarie/Progettino/client/src/Main.java&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,17 +61,27 @@
       <option name="presentableId" value="Default" />
       <updated>1744111318663</updated>
     </task>
+    <task id="LOCAL-00001" summary="fix bug interfaccia grafica (manca la visualizzazione delle informazioni riguardanti la/e stazione/i richiesta/e via gui)">
+      <option name="closed" value="true" />
+      <created>1744914132796</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1744914132796</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix bug interfaccia grafica (manca la visualizzazione delle informazioni riguardanti la/e stazione/i richiesta/e via gui)">
+      <option name="closed" value="true" />
+      <created>1744914142136</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744914142136</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix bug interfaccia grafica (manca la visualizzazione delle informazioni riguardanti la/e stazione/i richiesta/e via gui)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug interfaccia grafica (manca la visualizzazione delle informazioni riguardanti la/e stazione/i richiesta/e via gui)" />
   </component>
 </project>

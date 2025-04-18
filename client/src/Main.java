@@ -3,11 +3,11 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import java.net.*;
-
 public class Main extends JFrame {
     private Socket socket;
     private BufferedReader in;
     private PrintWriter out;
+    private JFrame visualizzaInfoFrame; // Change to JFrame
     private JTextArea textArea;
 
     public Main(String host, int port) {
@@ -32,17 +32,22 @@ public class Main extends JFrame {
 
         add(buttonPanel, BorderLayout.CENTER);
 
+        visualizzaInfoFrame = new JFrame("Informazioni Server");
+        visualizzaInfoFrame.setSize(600, 400);
+        visualizzaInfoFrame.setLayout(new BorderLayout());
         textArea = new JTextArea();
         textArea.setEditable(false);
-        add(new JScrollPane(textArea), BorderLayout.SOUTH);
+        visualizzaInfoFrame.add(new JScrollPane(textArea), BorderLayout.CENTER);
+        visualizzaInfoFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE); // Close but keep the main app running
+        visualizzaInfoFrame.setVisible(true);
 
         try {
             socket = new Socket(host, port);
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             out = new PrintWriter(socket.getOutputStream(), true);
-            log("Connessione al server riuscita.");
+            //log("Connessione al server riuscita.");
         } catch (IOException e) {
-            log("Errore di connessione al server: " + e.getMessage());
+            //log("Errore di connessione al server: " + e.getMessage());
         }
 
         addWindowListener(new WindowAdapter() {
@@ -54,7 +59,7 @@ public class Main extends JFrame {
                         socket.close();
                     }
                 } catch (IOException ex) {
-                    log("Errore durante la chiusura del socket: " + ex.getMessage());
+                    System.out.println("Errore durante la chiusura del socket: " + ex.getMessage());
                 }
             }
         });
@@ -65,7 +70,7 @@ public class Main extends JFrame {
     private void inviaComando(String comando) {
         log("Invio comando: " + comando);
         if (socket == null || socket.isClosed()) {
-            log("Socket chiusa. Riavvia l'applicazione.");
+            System.out.println("Socket chiusa. Riavvia l'applicazione.");
             return;
         }
 
@@ -74,13 +79,12 @@ public class Main extends JFrame {
             String risposta;
 
             while ((risposta = in.readLine()) != null) {
-                log("Risposta ricevuta: " + risposta);
                 if (risposta.equals("INPUT_REQUEST")) {
                     String input = JOptionPane.showInputDialog(this, "Inserisci valore:");
                     if (input == null) return;
                     out.println(input);
                 } else {
-                    textArea.append(risposta + "\n");
+                    log(risposta);
                 }
 
                 if (!in.ready()) break;
