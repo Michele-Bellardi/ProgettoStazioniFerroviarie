@@ -95,16 +95,15 @@ public class Stazione {
 
     @Override
     public String toString() {
-        return "Info{" +
-                "comune='" + comune + '\'' +
-                ", provincia='" + provincia + '\'' +
-                ", regione='" + regione + '\'' +
-                ", nome='" + nome + '\'' +
-                ", annoInserimento='" + annoInserimento + '\'' +
-                ", dataEOraInserimento='" + dataEOraInserimento + '\'' +
-                ", identificatoreInOpenStreetMap='" + identificatoreInOpenStreetMap + '\'' +
-                ", longitudine='" + longitudine + '\'' +
-                ", latitudine='" + latitudine + '\'' +
-                '}';
+        return "STAZIONE: " +
+                "comune='" + comune + "\n" +
+                "provincia='" + provincia + "\n" +
+                "regione='" + regione + "\n" +
+                "nome='" + nome + "\n" +
+                "annoInserimento='" + annoInserimento + "\n" +
+                "dataEOraInserimento='" + dataEOraInserimento + "\n" +
+                "identificatoreInOpenStreetMap='" + identificatoreInOpenStreetMap + "\n" +
+                "longitudine='" + longitudine + "\n" +
+                "latitudine='" + latitudine + "\n";
     }
 }
