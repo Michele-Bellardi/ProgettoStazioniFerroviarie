@@ -49,7 +49,7 @@ public class Main {
         */
 
         try (ServerSocket serverSocket = new ServerSocket(Main.PORT)) {
-            System.out.println("Server in ascolto sulla porta 12345");
+            System.out.println("Server in ascolto sulla porta " + PORT);
             while (true) {
                 Socket clientSocket = serverSocket.accept();
                 new Connessione(clientSocket).start();
