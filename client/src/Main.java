@@ -31,9 +31,8 @@ public class Main extends JFrame {
         }
 
         add(buttonPanel, BorderLayout.CENTER);
-
         visualizzaInfoFrame = new JFrame("Informazioni Server");
-        visualizzaInfoFrame.setSize(600, 400);
+        visualizzaInfoFrame.setBounds(600, 0, 600, 400);
         visualizzaInfoFrame.setLayout(new BorderLayout());
         textArea = new JTextArea();
         textArea.setEditable(false);
@@ -84,7 +83,8 @@ public class Main extends JFrame {
                     String input = JOptionPane.showInputDialog(this, "Inserisci valore:");
                     if (input == null) return;
                     out.println(input);
-                    log(risposta);
+                    String r2 = in.readLine();
+                    log(r2);
                 } else {
                     log(risposta);
                 }
