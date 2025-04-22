@@ -76,6 +76,7 @@ public class Main extends JFrame {
 
         try {
             out.println(comando);
+
             String risposta;
 
             while ((risposta = in.readLine()) != null) {
@@ -83,6 +84,7 @@ public class Main extends JFrame {
                     String input = JOptionPane.showInputDialog(this, "Inserisci valore:");
                     if (input == null) return;
                     out.println(input);
+                    log(risposta);
                 } else {
                     log(risposta);
                 }
