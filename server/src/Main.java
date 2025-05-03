@@ -6,47 +6,24 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 
+/**
+ * La classe Main rappresenta il punto di ingresso del server per la gestione delle stazioni ferroviarie.
+ * Legge i dati da un file CSV, li carica in memoria e avvia un server socket in ascolto su una porta specifica.
+ * Per ogni client che si connette, viene avviato un thread separato per gestire la connessione.
+ */
 public class Main {
+
+    /** Lista contenente le informazioni delle stazioni ferroviarie caricate da file. */
     public static ArrayList<Stazione> info = new ArrayList<>();
+
+    /** Porta su cui il server resta in ascolto. */
     public static int PORT = 1050;
 
+    /**
+     * Metodo che carica i dati dal file CSV e avvia il server socket.
+     */
     public static void main(String[] args) {
         prelevaDaFile();
-
-        //TESTING
-        /*
-
-        //stampa prelevato da file
-        for (int i = 0; i < info.size(); i++){
-            System.out.println(info.get(i).toString());
-        }
-
-        Operazioni prove = new Operazioni();
-
-        //riga
-        System.out.println(prove.getRow(3).toString());
-
-        //comune
-        ArrayList<Stazione> stazioniDelComune = prove.getMunicipality("BORGARO TORINESE");
-        for (int i = 0; i < stazioniDelComune.size(); i++){
-            System.out.println(stazioniDelComune.get(i).toString());
-        }
-
-        //nome
-        System.out.println(prove.getName("Matera Centrale").toString());
-
-        //anno
-        ArrayList<Stazione> stazioniDellAnno = prove.getYear("2013");
-        for (int i  = 0; i < stazioniDellAnno.size(); i++){
-            System.out.println(stazioniDellAnno.get(i).toString());
-        }
-
-        //coordinate
-        System.out.println(prove.getCoordinate("8.9750146", "46.0085186").toString());
-
-        //indicatore
-         System.out.println(prove.getIndicator("984003073").toString());
-        */
 
         try (ServerSocket serverSocket = new ServerSocket(Main.PORT)) {
             System.out.println("Server in ascolto sulla porta " + PORT);
@@ -59,7 +36,10 @@ public class Main {
         }
     }
 
-    //metodo per prelevare le informazioni presenti nel file csv
+    /**
+     * Legge le informazioni delle stazioni da un file CSV chiamato "Mappa-delle-stazioni-ferroviarie-in-Italia.csv".
+     * Ogni riga del file (esclusa l’intestazione) viene trasformata in un oggetto di tipo Stazione e aggiunta alla lista info.
+     */
     public static void prelevaDaFile(){
         String filePath = new File("Mappa-delle-stazioni-ferroviarie-in-Italia.csv").getAbsolutePath();
         boolean isFirstLine = true;
@@ -70,7 +50,6 @@ public class Main {
                     isFirstLine = false;
                     continue;
                 }
-                //creazione array di informazioni prelevate dal file csv
                 String[] columns = line.split(";");
                 String comune = columns[0];
                 String provincia = columns[1];
@@ -82,9 +61,7 @@ public class Main {
                 String longitudine = columns[7];
                 String latitudine = columns[8];
 
-                //inserimento nell'arraylist
                 info.add(new Stazione(comune, provincia, regione, nome, annoInserimento, dataEOraInserimento, identificatore, longitudine, latitudine));
-
             }
         } catch (IOException e) {
             e.printStackTrace();

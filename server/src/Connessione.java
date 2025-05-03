@@ -2,11 +2,28 @@ import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
 
+/**
+ * La classe una singola connessione con un client tramite socket.
+ * La classe estende la classe Thread per gestire più di una connessione per volta.
+ * La calsse riceve comandi dal client, li interpreta in base all'enum Opzioni ed esegue le relative operazioni tramite la classe Operazioni.
+ */
 public class Connessione extends Thread {
+    /** Socket di comunicazione con il client. */
     private Socket clientSocket;
+
+    /** Stream per la lettura dei messaggi provenienti dal client. */
     private BufferedReader in;
+
+    /** Stream per l'invio di messaggi al client. */
     private PrintWriter out;
 
+    /**
+     * Costruttore della classe Connessione.
+     * Inizializza i flussi di input e output associati al socket del client.
+     *
+     * @param clientSocket il socket associato al client connesso.
+     * @throws RuntimeException se si verifica un errore durante la creazione degli stream.
+     */
     public Connessione(Socket clientSocket) {
         this.clientSocket = clientSocket;
         try {
@@ -18,13 +35,15 @@ public class Connessione extends Thread {
         }
     }
 
+    /**
+     * Metodo che ascolta e interpreta i comandi inviati dal client, eseguendo le operazioni richieste tramite la classe Operazioni, e rispondendo con i risultati.
+     */
     @Override
     public void run() {
         Operazioni operazioni = new Operazioni();
         System.out.println("Connessione avviata con: " + clientSocket);
         String str = null;
         try {
-
             do {
                 str = in.readLine();
                 System.out.println("Messaggio ricevuto dal client: " + str);
@@ -97,7 +116,7 @@ public class Connessione extends Thread {
                         out.println("NESSUNA OPZIONE CORRISPONDENTE");
                         break;
                 }
-            }while(str != null);
+            } while (str != null);
         } catch (IOException e) {
             System.err.println("Errore durante la comunicazione con il client: " + e.getMessage());
         } finally {
