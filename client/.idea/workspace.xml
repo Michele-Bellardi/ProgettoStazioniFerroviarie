@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64f21ad2-6779-4666-9ba1-6456dbdd1fbe" name="Changes" comment="fix bug interfaccia grafica (manca la visualizzazione delle informazioni riguardanti la/e stazione/i richiesta/e via gui)">
-      <change beforePath="$PROJECT_DIR$/../server/out/production/Progettino/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/Progettino/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/Progettino/Stazione.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/Progettino/Stazione.class" afterDir="false" />
+    <list default="true" id="64f21ad2-6779-4666-9ba1-6456dbdd1fbe" name="Changes" comment="gui conclusa">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/Connessione.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Connessione.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/Operazioni.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Operazioni.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/Opzioni.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Opzioni.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/Stazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Stazione.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +19,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -75,11 +78,20 @@
       <option name="project" value="LOCAL" />
       <updated>1744914142136</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="gui conclusa">
+      <option name="closed" value="true" />
+      <created>1745310783798</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1745310783798</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix bug interfaccia grafica (manca la visualizzazione delle informazioni riguardanti la/e stazione/i richiesta/e via gui)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bug interfaccia grafica (manca la visualizzazione delle informazioni riguardanti la/e stazione/i richiesta/e via gui)" />
+    <MESSAGE value="gui conclusa" />
+    <option name="LAST_COMMIT_MESSAGE" value="gui conclusa" />
   </component>
 </project>
