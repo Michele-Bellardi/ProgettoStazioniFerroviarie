@@ -21,7 +21,7 @@ public class Operazioni {
      */
     public String getRow(int row){
         if(row <= 0 || row > Main.info.size()) {
-            return "Stazione non esistente";
+            return "ERROR: INVALID ROW";
         }
         return Main.info.get(row - 1).toString();
     }
@@ -38,7 +38,7 @@ public class Operazioni {
             if(Main.info.get(i).getComune().equalsIgnoreCase(municipality)) stazioni.add(Main.info.get(i).toString());
         }
         if(stazioni.size() <= 0) {
-            stazioni.add("Stazione non trovata nel comune indicato");
+            stazioni.add("ERROR: INVALID MUNICIPALITY");
         }
         return stazioni;
     }
@@ -53,7 +53,7 @@ public class Operazioni {
         for (int i = 0; i < Main.info.size(); ++i){
             if(Main.info.get(i).getNome().equalsIgnoreCase(name)) return Main.info.get(i).toString();
         }
-        return ("Stazione con il nome indicato non esistente");
+        return ("ERROR: INVALID NAME");
     }
 
     /**
@@ -67,7 +67,7 @@ public class Operazioni {
         for (int i = 0; i < Main.info.size(); ++i){
             if(Main.info.get(i).getAnnoInserimento().equalsIgnoreCase(year)) stazioni.add(Main.info.get(i).toString());
         }
-        if(stazioni.size() <= 0) stazioni.add("Stazione non trovata per l'anno indicato");
+        if(stazioni.size() <= 0) stazioni.add("ERROR: IVALID YEAR");
         return stazioni;
     }
 
@@ -82,7 +82,7 @@ public class Operazioni {
         for (int i = 0; i < Main.info.size(); ++i){
             if(Main.info.get(i).getLatitudine().equalsIgnoreCase(latitudine) && Main.info.get(i).getLongitudine().equalsIgnoreCase(longitudine)) return Main.info.get(i).toString();
         }
-        return ("Stazione con le coordinate indicate non esistente");
+        return ("ERROR: IVALID COORDINATES");
     }
 
     /**
@@ -95,6 +95,6 @@ public class Operazioni {
         for (int i = 0; i < Main.info.size(); ++i){
             if(Main.info.get(i).getIdentificatoreInOpenStreetMap().equalsIgnoreCase(indicator)) return Main.info.get(i).toString();
         }
-        return ("Stazione con l'indicatore indicato non esistente");
+        return ("ERROR: IVALID INDICATOR");
     }
 }
