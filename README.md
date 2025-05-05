@@ -10,7 +10,7 @@ Nome del file: Mappa-delle-stazioni-ferroviarie-in-Italia.csv
 ## Installazione
 1. Clonare la repository:
    ```sh
-   git clone https://github.com/LeoF-07/Progetto.git
+   git clone https://github.com/Michele-Bellardi/ProgettoStazioniFerroviarie.git
 3. Aprire i progetti Server e Client separatamente nell'IDE
 
 ## Esecuzione
