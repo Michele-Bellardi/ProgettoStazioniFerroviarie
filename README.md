@@ -18,7 +18,8 @@ Nome del file: Mappa-delle-stazioni-ferroviarie-in-Italia.csv
 2. Avviare il Client
 
 ## Funzionamento
-
+Il Server dispone del file CSV contenente le stazioni ferroviarie e le loro informazioni, legge il file e inserisce tutte le informazioni all’interno di un ArrayList.
+Client e server comunicano scambiando stringhe.
 
 ## Funzionalità
 Il Server mette dispone di funzionalità di ricerca di informazioni riguradanti stazioni ferroviarie all'interno di un file CSV. 
