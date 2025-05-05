@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64f21ad2-6779-4666-9ba1-6456dbdd1fbe" name="Changes" comment="conclusione progetto">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/Progettino/Operazioni.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/Progettino/Operazioni.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/Progettino/RigaNonEsistenteException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/Progettino/StazioneNonTrovataException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Relazione Sistemi - stazioni ferroviarie.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Relazione Sistemi - stazioni ferroviarie.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +89,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746450695857</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="conclusione progetto">
+      <option name="closed" value="true" />
+      <created>1746451044728</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1746451044728</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
