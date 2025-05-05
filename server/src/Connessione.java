@@ -65,16 +65,16 @@ public class Connessione extends Thread {
                         out.println("INPUT_REQUEST");
                         String row = in.readLine();
                         int riga = Integer.parseInt(row);
-                        out.println(operazioni.getRow(riga).toString());
+                        out.println(operazioni.getRow(riga));
                         break;
 
                     case GET_MUNICIPALITY:
                         out.println("Inserisci il comune:");
                         out.println("INPUT_REQUEST");
                         String municipality = in.readLine();
-                        ArrayList<Stazione> stazioniComune = operazioni.getMunicipality(municipality);
-                        for (Stazione s : stazioniComune) {
-                            out.println(s.toString());
+                        ArrayList<String> stazioniComune = operazioni.getMunicipality(municipality);
+                        for (String s : stazioniComune) {
+                            out.println(s);
                         }
                         break;
 
@@ -82,16 +82,16 @@ public class Connessione extends Thread {
                         out.println("Inserisci il nome:");
                         out.println("INPUT_REQUEST");
                         String name = in.readLine();
-                        out.println(operazioni.getName(name).toString());
+                        out.println(operazioni.getName(name));
                         break;
 
                     case GET_YEAR:
                         out.println("Inserisci l'anno:");
                         out.println("INPUT_REQUEST");
                         String year = in.readLine();
-                        ArrayList<Stazione> stazioniAnno = operazioni.getYear(year);
-                        for (Stazione s : stazioniAnno) {
-                            out.println(s.toString());
+                        ArrayList<String> stazioniAnno = operazioni.getYear(year);
+                        for (String s : stazioniAnno) {
+                            out.println(s);
                         }
                         break;
 
@@ -102,14 +102,14 @@ public class Connessione extends Thread {
                         out.println("Inserisci y:");
                         out.println("INPUT_REQUEST");
                         String y = in.readLine();
-                        out.println(operazioni.getCoordinate(x, y).toString());
+                        out.println(operazioni.getCoordinate(x, y));
                         break;
 
                     case GET_INDICATOR:
                         out.println("Inserisci indicatore:");
                         out.println("INPUT_REQUEST");
                         String indicator = in.readLine();
-                        out.println(operazioni.getIndicator(indicator).toString());
+                        out.println(operazioni.getIndicator(indicator));
                         break;
 
                     default:

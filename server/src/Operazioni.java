@@ -18,11 +18,12 @@ public class Operazioni {
      *
      * @param row Numero della riga (a partire da 1).
      * @return La stazione alla riga indicata.
-     * @throws RigaNonEsistenteException se la riga non esiste nel dataset.
      */
-    public Stazione getRow(int row){
-        if(row <= 0 || row > Main.info.size()) throw new RigaNonEsistenteException("Riga non presente nel file csv");
-        return Main.info.get(row - 1);
+    public String getRow(int row){
+        if(row <= 0 || row > Main.info.size()) {
+            return "Stazione non esistente";
+        }
+        return Main.info.get(row - 1).toString();
     }
 
     /**
@@ -30,14 +31,15 @@ public class Operazioni {
      *
      * @param municipality Il nome del comune.
      * @return Una lista di stazioni presenti nel comune specificato.
-     * @throws StazioneNonTrovataException se nessuna stazione è trovata nel comune indicato.
      */
-    public ArrayList<Stazione> getMunicipality(String municipality){
-        ArrayList<Stazione> stazioni = new ArrayList<>();
+    public ArrayList<String> getMunicipality(String municipality){
+        ArrayList<String> stazioni = new ArrayList<>();
         for (int i = 0; i < Main.info.size(); ++i){
-            if(Main.info.get(i).getComune().equalsIgnoreCase(municipality)) stazioni.add(Main.info.get(i));
+            if(Main.info.get(i).getComune().equalsIgnoreCase(municipality)) stazioni.add(Main.info.get(i).toString());
         }
-        if(stazioni.size() <= 0) throw new StazioneNonTrovataException("Stazione non trovata nel comune indicato");
+        if(stazioni.size() <= 0) {
+            stazioni.add("Stazione non trovata nel comune indicato");
+        }
         return stazioni;
     }
 
@@ -46,13 +48,12 @@ public class Operazioni {
      *
      * @param name Il nome esatto della stazione.
      * @return La stazione corrispondente al nome.
-     * @throws StazioneNonTrovataException se la stazione con quel nome non esiste.
      */
-    public Stazione getName(String name){
+    public String getName(String name){
         for (int i = 0; i < Main.info.size(); ++i){
-            if(Main.info.get(i).getNome().equalsIgnoreCase(name)) return Main.info.get(i);
+            if(Main.info.get(i).getNome().equalsIgnoreCase(name)) return Main.info.get(i).toString();
         }
-        throw new StazioneNonTrovataException("Stazione con il nome indicato non esistente");
+        return ("Stazione con il nome indicato non esistente");
     }
 
     /**
@@ -60,14 +61,13 @@ public class Operazioni {
      *
      * @param year L'anno di inserimento da cercare.
      * @return Una lista di stazioni inserite nell'anno specificato.
-     * @throws StazioneNonTrovataException se nessuna stazione è stata trovata per quell'anno.
      */
-    public ArrayList<Stazione> getYear(String year){
-        ArrayList<Stazione> stazioni = new ArrayList<>();
+    public ArrayList<String> getYear(String year){
+        ArrayList<String> stazioni = new ArrayList<>();
         for (int i = 0; i < Main.info.size(); ++i){
-            if(Main.info.get(i).getAnnoInserimento().equalsIgnoreCase(year)) stazioni.add(Main.info.get(i));
+            if(Main.info.get(i).getAnnoInserimento().equalsIgnoreCase(year)) stazioni.add(Main.info.get(i).toString());
         }
-        if(stazioni.size() <= 0) throw new StazioneNonTrovataException("Stazione non trovata per l'anno indicato");
+        if(stazioni.size() <= 0) stazioni.add("Stazione non trovata per l'anno indicato");
         return stazioni;
     }
 
@@ -77,13 +77,12 @@ public class Operazioni {
      * @param longitudine La longitudine della stazione.
      * @param latitudine La latitudine della stazione.
      * @return La stazione corrispondente alle coordinate specificate.
-     * @throws StazioneNonTrovataException se nessuna stazione è trovata con quelle coordinate.
      */
-    public Stazione getCoordinate(String longitudine, String latitudine){
+    public String getCoordinate(String longitudine, String latitudine){
         for (int i = 0; i < Main.info.size(); ++i){
-            if(Main.info.get(i).getLatitudine().equalsIgnoreCase(latitudine) && Main.info.get(i).getLongitudine().equalsIgnoreCase(longitudine)) return Main.info.get(i);
+            if(Main.info.get(i).getLatitudine().equalsIgnoreCase(latitudine) && Main.info.get(i).getLongitudine().equalsIgnoreCase(longitudine)) return Main.info.get(i).toString();
         }
-        throw new StazioneNonTrovataException("Stazione con le coordinate indicate non esistente");
+        return ("Stazione con le coordinate indicate non esistente");
     }
 
     /**
@@ -91,12 +90,11 @@ public class Operazioni {
      *
      * @param indicator L'identificatore OpenStreetMap.
      * @return La stazione corrispondente all'indicatore.
-     * @throws StazioneNonTrovataException se nessuna stazione corrisponde all'indicatore specificato.
      */
-    public Stazione getIndicator(String indicator){
+    public String getIndicator(String indicator){
         for (int i = 0; i < Main.info.size(); ++i){
-            if(Main.info.get(i).getIdentificatoreInOpenStreetMap().equalsIgnoreCase(indicator)) return Main.info.get(i);
+            if(Main.info.get(i).getIdentificatoreInOpenStreetMap().equalsIgnoreCase(indicator)) return Main.info.get(i).toString();
         }
-        throw new StazioneNonTrovataException("Stazione con l'indicatore indicato non esistente");
+        return ("Stazione con l'indicatore indicato non esistente");
     }
 }

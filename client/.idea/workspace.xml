@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64f21ad2-6779-4666-9ba1-6456dbdd1fbe" name="Changes" comment="gui conclusa">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/Connessione.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Connessione.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/Operazioni.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Operazioni.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/Opzioni.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Opzioni.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/Stazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Stazione.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/RigaNonEsistenteException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/StazioneNonTrovataException.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,18 +39,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ClientGUI.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/miche/OneDrive/Desktop/java/ProgettoStazioniFerroviarie/client&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/michele.bellardi/Desktop/stazioniFerroviarie/Progettino/client/src/Main.java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ClientGUI.executor": "Run",
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/miche/OneDrive/Desktop/java/ProgettoStazioniFerroviarie/server",
+    "onboarding.tips.debug.path": "C:/Users/michele.bellardi/Desktop/stazioniFerroviarie/Progettino/client/src/Main.java"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
