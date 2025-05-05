@@ -8,9 +8,10 @@ Nome del file: Mappa-delle-stazioni-ferroviarie-in-Italia.csv
 * Una console per eseguire i comandi
 
 ## Installazione
-1. Clonare la repository:  ```sh
-   git clone https://github.com/Michele-Bellardi/ProgettoStazioniFerroviarie.git
-2. Aprire i progetti Server e Client separatamente nell'IDE
+1. Clonare la repository:
+   ```sh
+   git clone https://github.com/LeoF-07/Progetto.git
+3. Aprire i progetti Server e Client separatamente nell'IDE
 
 ## Esecuzione
 1. Avviare il Server
