@@ -137,6 +137,6 @@ public class Main extends JFrame {
      */
     public static void main(String[] args) {
         int PORT = 1050;
-        SwingUtilities.invokeLater(() -> new Main("localhost", PORT));
+        SwingUtilities.invokeLater(() -> new Main("127.0.0.1", PORT));
     }
 }

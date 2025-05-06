@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64f21ad2-6779-4666-9ba1-6456dbdd1fbe" name="Changes" comment="conclusione progetto">
-      <change beforePath="$PROJECT_DIR$/../Relazione Sistemi - stazioni ferroviarie.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Relazione Sistemi - stazioni ferroviarie.docx" afterDir="false" />
+    <list default="true" id="64f21ad2-6779-4666-9ba1-6456dbdd1fbe" name="Changes" comment="conclusione progetto e relazione">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +15,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -97,13 +97,22 @@
       <option name="project" value="LOCAL" />
       <updated>1746451044728</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="conclusione progetto e relazione">
+      <option name="closed" value="true" />
+      <created>1746451682468</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1746451682468</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix bug interfaccia grafica (manca la visualizzazione delle informazioni riguardanti la/e stazione/i richiesta/e via gui)" />
     <MESSAGE value="gui conclusa" />
     <MESSAGE value="conclusione progetto" />
-    <option name="LAST_COMMIT_MESSAGE" value="conclusione progetto" />
+    <MESSAGE value="conclusione progetto e relazione" />
+    <option name="LAST_COMMIT_MESSAGE" value="conclusione progetto e relazione" />
   </component>
 </project>
