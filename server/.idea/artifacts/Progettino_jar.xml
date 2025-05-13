@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Progettino:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Progettino_jar</output-path>
+    <root id="archive" name="Progettino.jar">
+      <element id="module-output" name="Progettino" />
+    </root>
+  </artifact>
+</component>
